@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "./Title"
 import { Routes, Route } from "react-router-dom";
 import AlbumList from "./AlbumList";
@@ -8,7 +8,8 @@ import '../App.css';
 
 
 function App() {
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
+
 
   // // Stay Logged On
   // useEffect(() => {
@@ -23,10 +24,10 @@ function App() {
   return (
     <div className="App">
       <Title />
-      <NavBar />
+      <NavBar user={user}/>
       <Routes>
         <Route exact path="/albums" element={<AlbumList />} />
-        <Route exact path="/login" element={<LogIn />} />
+        <Route exact path="/login" element={<LogIn onLogin={setUser}/>} />
       </Routes>
 
     </div>

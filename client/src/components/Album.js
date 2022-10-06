@@ -1,8 +1,8 @@
-function Album(album) {
-  console.log(album)
+function Album({album}) {
+
   return (
     <ul>
-      <ul>{album.album.title}</ul>
+      <li>{album.title}</li>
     </ul>
   );
 }

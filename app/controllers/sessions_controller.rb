@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
   #Log In
   def create
 
-    # finder user by username
-    user = User.find_by(username: :params[:username])
+    # finde user by username
+    user = User.find_by(username: params[:username])
+    # byebug
     # if user and authenticated password exists
     if user&.authenticate(params[:password])
       # set id on session hash

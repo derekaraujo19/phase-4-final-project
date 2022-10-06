@@ -1,6 +1,10 @@
 import {NavLink} from "react-router-dom";
 
-function NavBar(){
+function NavBar({user}){
+
+  // Log Out
+
+
   return (
     <div>
       <NavLink
@@ -8,11 +12,8 @@ function NavBar(){
       >
         Albums
       </NavLink>
-      <NavLink
-        to="/login"
-      >
-        Log In
-      </NavLink>
+      {user ? <button onClick={handleLogout}>Log Out</button> :
+      <NavLink to="/login">Log In</NavLink>}
     </div>
   );
 }

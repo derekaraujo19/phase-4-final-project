@@ -3,7 +3,7 @@ import React, {useState} from "react";
 function LogIn({onLogin}){
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
 
 
   function handleSubmit(e) {
@@ -11,17 +11,18 @@ function LogIn({onLogin}){
     fetch("/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      if (r.ok) {
+    })
+    .then(r => {
+      if(r.ok){
         r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => setErrors(err.error));
       }
-      // else {
-      //   r.json().then((e) => setErrors(e.errors));
-      // }
     });
+
   }
 
 
@@ -36,6 +37,12 @@ function LogIn({onLogin}){
         />
       <button type="submit">login</button>
       </form>
+      <div>
+        {errors ? (
+          <ul>{errors}</ul>
+        ) : ""
+        }
+      </div>
     </div>
   );
 }

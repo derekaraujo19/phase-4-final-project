@@ -18,6 +18,8 @@ function AlbumList(){
   album.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  console.log(displayedAlbums);
+
   // Add Album
 
   return (
@@ -35,7 +37,6 @@ function AlbumList(){
           <Album
             key={album.id}
             album={album}
-
           />
         ))}
       </ul>
