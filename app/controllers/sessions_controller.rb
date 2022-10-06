@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
   #Log In
   def create
+
     # finder user by username
     user = User.find_by(username: :params[:username])
     # if user and authenticated password exists
