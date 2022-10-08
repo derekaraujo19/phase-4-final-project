@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Album from "./Album";
+import AddAlbum from "./AddAlbum"
 
 
 function AlbumList(){
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState("");
+  const [showAddAlbum, setShowAddAlbum] = useState(null)
 
   // Get album list
   useEffect(() => {
@@ -18,9 +20,18 @@ function AlbumList(){
   album.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  console.log(displayedAlbums);
 
-  // Add Album
+  // Add Album Form
+  function showAddAlbumForm(){
+    setShowAddAlbum(true)
+  };
+
+  // Add New Album to DOM
+  function addNewAlbum(newAlbum) {
+    setAlbums([...albums, newAlbum]);
+  };
+
+  if(showAddAlbum) return <AddAlbum showAddAlbum={setShowAddAlbum} addNewAlbum={addNewAlbum} />
 
   return (
     <div>
@@ -32,6 +43,7 @@ function AlbumList(){
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
+      <button onClick={showAddAlbumForm}>Add New Album</button>
       <ul>
         {displayedAlbums.map((album) => (
           <Album

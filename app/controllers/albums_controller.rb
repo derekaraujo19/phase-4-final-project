@@ -6,5 +6,15 @@ class AlbumsController < ApplicationController
     render json: albums
   end
 
+  def create
+    album = Album.create!(album_params)
+    render json: album, status: :created
+  end
+
+  private
+
+  def album_params
+    params.permit(:title, :release_date, :artist, :artwork_url)
+  end
 
 end
