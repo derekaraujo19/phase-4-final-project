@@ -1,8 +1,17 @@
 import {NavLink} from "react-router-dom";
 
-function NavBar({user}){
+function NavBar({user, setUser}){
 
   // Log Out
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    })
+  }
 
 
   return (
@@ -13,7 +22,7 @@ function NavBar({user}){
         Albums
       </NavLink>
       {user ? <button onClick={handleLogout}>Log Out</button> :
-      <NavLink to="/login">Log In</NavLink>}
+      <NavLink to="/login">Log In or Sign Up</NavLink>}
     </div>
   );
 }
