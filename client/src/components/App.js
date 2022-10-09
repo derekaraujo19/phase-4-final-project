@@ -26,7 +26,7 @@ function App() {
       <Title />
       <NavBar user={user} setUser={setUser}/>
       <Routes>
-        <Route exact path="/albums" element={<AlbumList />} />
+        <Route exact path="/albums" element={<AlbumList user={user}/>} />
         <Route exact path="/login" element={<LogIn onLogin={setUser}/>} />
       </Routes>
 

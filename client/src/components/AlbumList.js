@@ -3,7 +3,7 @@ import Album from "./Album";
 import AddAlbum from "./AddAlbum"
 
 
-function AlbumList(){
+function AlbumList({user}){
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState("");
   const [showAddAlbum, setShowAddAlbum] = useState(null)
@@ -49,6 +49,7 @@ function AlbumList(){
           <Album
             key={album.id}
             album={album}
+            user={user}
           />
         ))}
       </ul>
