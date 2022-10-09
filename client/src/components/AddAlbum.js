@@ -34,17 +34,29 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
     });
   }
 
-  console.log(errors)
+  function returnToAlbumList(){
+    showAddAlbum(false);
+  };
 
 
   return (
-    <form onSubmit={handleAddAlbumSubmit}>
-      <input  type="text" name="title" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}  />
-      <input  type="text" name="release_date" placeholder="Release Date" value={release_date} onChange={(e) => setRelease_date(e.target.value)}  />
-      <input  type="text" name="artist" placeholder="Artist" value={artist} onChange={(e) => setArtist(e.target.value)}  />
-      <input  type="text" name="artwork" placeholder="Artwork URL" value={artwork} onChange={(e) => setArtwork(e.target.value)}  />
-      <button>Add Album</button>
-    </form>
+    <div>
+      <form onSubmit={handleAddAlbumSubmit}>
+        <input  type="text" name="title" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}  />
+        <input  type="text" name="release_date" placeholder="Release Date (opt.)" value={release_date} onChange={(e) => setRelease_date(e.target.value)}  />
+        <input  type="text" name="artist" placeholder="Artist" value={artist} onChange={(e) => setArtist(e.target.value)}  />
+        <input  type="text" name="artwork" placeholder="Artwork URL" value={artwork} onChange={(e) => setArtwork(e.target.value)}  />
+        <button>Add Album</button>
+      </form>
+      <button onClick={returnToAlbumList}>Return to List</button>
+      {/* Errors */}
+      <div>
+        {errors ? (
+          <ul>{errors}</ul>
+        ) : ""
+        }
+      </div>
+    </div>
   );
 }
 
@@ -53,6 +65,3 @@ export default AddAlbum;
 
 
 
-
-// t.string "artist"
-// t.string "artwork_url"
