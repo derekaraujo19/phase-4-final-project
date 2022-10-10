@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState(null);
 
 
-  // // Stay Logged On
+  // Stay Logged On MUST HANDLE ERRORS
   useEffect(() => {
     fetch("/me").then((r) => {
       if (r.ok) {
@@ -21,7 +21,7 @@ function App() {
     });
   }, []);
 
-  console.log(user)
+
 
 
   return (
@@ -29,7 +29,7 @@ function App() {
       <Title />
       <NavBar user={user} setUser={setUser}/>
       <Routes>
-        <Route exact path="/" element={<AlbumList user={user}/>} />
+        <Route exact path="/" element={<AlbumList  user={user} /> } />
         <Route exact path="/reviews" element={<MyReviews user={user}/>} />
         <Route exact path="/login" element={<LogIn onLogin={setUser}/>} />
       </Routes>

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  skip_before_action :authorize, only: [:index]
+  # skip_before_action :authorize, only: [:index]
 
   def index
     user = User.find(params[:user_id])
