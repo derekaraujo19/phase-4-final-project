@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
 
   def index
     albums = Album.all
-    render json: albums
+    render json: albums, include: ['reviews', 'reviews.user']
   end
 
   def create

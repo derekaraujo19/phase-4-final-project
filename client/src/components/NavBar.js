@@ -16,7 +16,7 @@ function NavBar({user, setUser}){
 
   return (
     <div>
-      <NavLink to="/albums"> Albums </NavLink>
+      <NavLink to="/"> Albums </NavLink>
       <NavLink to="/reviews"> My Reviews </NavLink>
       {user ? <button onClick={handleLogout}>Log Out</button> :
       <NavLink to="/login"> Log In or Sign Up </NavLink>}

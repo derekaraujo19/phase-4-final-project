@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  resources :reviews
+  # resources :reviews, only: [:index, :create]
   resources :albums, only: [:index, :create]
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  get '/users/:user_id/reviews', to: 'reviews#index'
 
 
 

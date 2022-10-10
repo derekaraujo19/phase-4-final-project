@@ -15,6 +15,8 @@ function AlbumList({user}){
       .then((albums) => setAlbums(albums));
   }, []);
 
+
+
   // Search
   const displayedAlbums = albums.filter((album) =>
   album.title.toLowerCase().includes(search.toLowerCase())
