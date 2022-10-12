@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   # Reviews:
   get '/users/:user_id/reviews', to: 'reviews#index'
+  # post '/users/:user_id/reviews', to: 'reviews#create'
+  resources :reviews, only: [:create]
 
 
 

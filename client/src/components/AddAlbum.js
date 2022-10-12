@@ -8,6 +8,7 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
   const [artwork, setArtwork] = useState("");
   const [errors, setErrors] = useState([]);
 
+  // Submit new album
   function handleAddAlbumSubmit(e) {
     e.preventDefault();
     let newAlbumData = {
@@ -34,6 +35,7 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
     });
   }
 
+  // Return user to album list
   function returnToAlbumList(){
     showAddAlbum(false);
   };
@@ -51,9 +53,9 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
       <button onClick={returnToAlbumList}>Return to List</button>
       {/* Errors */}
       <div>
-        {errors ? (
-          <ul>{errors}</ul>
-        ) : ""
+        {errors ? (errors.map((error) => (
+          <ul key={error}>{error}</ul>
+        ))) : ""
         }
       </div>
     </div>

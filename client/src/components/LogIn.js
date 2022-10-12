@@ -70,9 +70,9 @@ function LogIn({onLogin}){
         </form>
         {/* Errors */}
           <div>
-            {errors ? (
-              <ul>{errors}</ul>
-            ) : ""
+            {errors ? (errors.map((error) => (
+              <ul key={error}>{error}</ul>
+            ))) : ""
             }
           </div>
       </div>

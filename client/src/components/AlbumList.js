@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Album from "./Album";
 import AddAlbum from "./AddAlbum"
+import AddReview from "./AddReview";
 
 
 function AlbumList({user}){
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState("");
-  const [showAddAlbum, setShowAddAlbum] = useState(null)
+  const [showAddAlbum, setShowAddAlbum] = useState(null);
+
+
+
 
   // Get album list
   useEffect(() => {
@@ -30,7 +34,9 @@ function AlbumList({user}){
     setAlbums([...albums, newAlbum]);
   };
 
+  // Add Album Form
   if(showAddAlbum) return <AddAlbum showAddAlbum={setShowAddAlbum} addNewAlbum={addNewAlbum} />
+
 
   return (
     <div>

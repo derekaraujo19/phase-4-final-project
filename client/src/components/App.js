@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState(null);
 
 
-  // Stay Logged On MUST HANDLE ERRORS
+  // Stay Logged On MUST HANDLE ERRORS?
   useEffect(() => {
     fetch("/me").then((r) => {
       if (r.ok) {
@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <Title />
+      {user ? <h3> Welcome, {user.username}! </h3> : ""}
       <NavBar user={user} setUser={setUser}/>
       <Routes>
         <Route exact path="/" element={<AlbumList  user={user} /> } />
