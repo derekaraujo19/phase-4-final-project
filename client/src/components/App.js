@@ -10,6 +10,7 @@ import '../App.css';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [albums, setAlbums] = useState([]);
 
 
   // Stay Logged On MUST HANDLE ERRORS?
@@ -30,8 +31,8 @@ function App() {
       {user ? <h3> Welcome, {user.username}! </h3> : ""}
       <NavBar user={user} setUser={setUser}/>
       <Routes>
-        <Route exact path="/" element={<AlbumList  user={user} /> } />
-        <Route exact path="/reviews" element={<MyReviews user={user}/>} />
+        <Route exact path="/" element={<AlbumList  user={user} albums={albums} setAlbums={setAlbums} /> } />
+        <Route exact path="/reviews" element={<MyReviews user={user} albums={albums}/>} />
         <Route exact path="/login" element={<LogIn onLogin={setUser}/>} />
       </Routes>
 

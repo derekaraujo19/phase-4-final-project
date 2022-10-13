@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  validates :title, :body, presence: true
+  validates :title, :body, :album_id, presence: true
 
   belongs_to :album
   belongs_to :user

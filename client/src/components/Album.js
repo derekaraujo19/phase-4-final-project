@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import AddReview from "./AddReview";
+import React from "react";
+
 
 function Album({album, user}) {
-  const [showAddReviewForm, setShowAddReviewForm] = useState(false)
+
 
 
   return (
@@ -18,9 +18,6 @@ function Album({album, user}) {
           <li>{review.body}</li>
         </ul>
       ))}
-      {showAddReviewForm ? (
-        <AddReview user={user} album={album}/>
-      ): <button onClick={() => setShowAddReviewForm(true)}>New Review</button>}
     </ul>
   );
 }

@@ -51,7 +51,7 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
         <button>Add Album</button>
       </form>
       <button onClick={returnToAlbumList}>Return to List</button>
-      {/* Errors */}
+      {/* ERRORS */}
       <div>
         {errors ? (errors.map((error) => (
           <ul key={error}>{error}</ul>

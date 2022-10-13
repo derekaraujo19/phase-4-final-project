@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Album from "./Album";
 import AddAlbum from "./AddAlbum"
-import AddReview from "./AddReview";
 
-
-function AlbumList({user}){
-  const [albums, setAlbums] = useState([]);
+function AlbumList({user, setAlbums, albums}){
   const [search, setSearch] = useState("");
   const [showAddAlbum, setShowAddAlbum] = useState(null);
-
-
 
 
   // Get album list
@@ -17,7 +12,7 @@ function AlbumList({user}){
     fetch('/albums')
       .then((r) => r.json())
       .then((albums) => setAlbums(albums));
-  }, []);
+  }, [setAlbums]);
 
   // Search
   const displayedAlbums = albums.filter((album) =>

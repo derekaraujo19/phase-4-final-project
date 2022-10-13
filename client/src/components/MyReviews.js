@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import AddReview from "./AddReview";
+import Review from "./Review";
 
-function MyReviews({user}) {
+function MyReviews({user, albums}) {
   const [reviews, setReviews] = useState([]);
+  const [showAddReview, setShowAddReview] = useState(null);
 
   // Get Reviews List: DO WE NEED TO HANDLE ERRORS?
   useEffect(() => {
@@ -14,19 +17,31 @@ function MyReviews({user}) {
     }
   }, [user]);
 
+  // Add Review Form
+  function showAddReviewForm(){
+    setShowAddReview(true)
+  };
+
+  // Add New Review to DOM
+  function addNewReview(newReview) {
+    setReviews([...reviews, newReview])
+  };
+
   // If user not logged in, prompt them to log in:
   if(!user) return <h3>Please Log In or Create An Account to Start Reviewing!</h3>
 
+  // Add Review Form
+  if(showAddReview) return <AddReview showAddReview={setShowAddReview} albums={albums} addNewReview={addNewReview}/>
+
+
   return (
     <ul>
+      <button onClick={showAddReviewForm}>Add New Review</button>
       {reviews.map((review) => (
-        <ul key={review.id}>
-          <li> <img src={review.album.artwork_url} alt="Album Artwork" width="100" height="100"/> {review.album.title} by {review.album.artist} </li>
-          <li>{review.title}</li>
-          <li>{review.body}</li>
-          <li>{review.created_at}</li>
-        </ul>
-
+        <Review
+          review={review}
+          key={review.id}
+        />
       ))}
     </ul>
   );
