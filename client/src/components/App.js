@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import AlbumList from "./AlbumList";
 import MyReviews from "./MyReviews";
-import LogIn from "./LogIn";
+import Profile from "./Profile";
 import '../App.css';
 
 
@@ -28,12 +28,11 @@ function App() {
   return (
     <div className="App">
       <Title />
-      {user ? <h3> Welcome, {user.username}! </h3> : ""}
       <NavBar user={user} setUser={setUser}/>
       <Routes>
         <Route exact path="/" element={<AlbumList  user={user} albums={albums} setAlbums={setAlbums} /> } />
         <Route exact path="/reviews" element={<MyReviews user={user} albums={albums}/>} />
-        <Route exact path="/login" element={<LogIn onLogin={setUser}/>} />
+        <Route exact path="/Profile" element={<Profile setUser={setUser} user={user}/>} />
       </Routes>
 
     </div>

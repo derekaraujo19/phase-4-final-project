@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   # Albums:
   resources :albums, only: [:index, :create]
+  get "/users/:user_id/albums", to: 'albums#user_albums'
 
   # User:
   post "/signup", to: "users#create"
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
 
   # Reviews:
   get '/users/:user_id/reviews', to: 'reviews#index'
-
   resources :reviews, only: [:create, :update]
 
 

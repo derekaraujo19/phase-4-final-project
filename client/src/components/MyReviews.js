@@ -6,7 +6,7 @@ function MyReviews({user, albums}) {
   const [reviews, setReviews] = useState([]);
   const [showAddReview, setShowAddReview] = useState(null);
 
-  // Get Reviews List: DO WE NEED TO HANDLE ERRORS?
+  // Get user's Reviews: DO WE NEED TO HANDLE ERRORS?
   useEffect(() => {
     if (user) {
       fetch(`/users/${user.id}/reviews`).then((r) => {
@@ -28,7 +28,7 @@ function MyReviews({user, albums}) {
   };
 
   // If user not logged in, prompt them to log in:
-  if(!user) return <h3>Please Log In or Create An Account to Start Reviewing!</h3>
+  if(!user) return <h3> Please Log In or Create An Account </h3>
 
   // Add Review Form
   if(showAddReview) return <AddReview showAddReview={setShowAddReview} albums={albums} addNewReview={addNewReview}/>

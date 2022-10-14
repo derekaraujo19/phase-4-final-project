@@ -1,25 +1,13 @@
 import {NavLink} from "react-router-dom";
 
-function NavBar({user, setUser}){
-
-  // Log Out
-  function handleLogout() {
-    fetch("/logout", {
-      method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-      }
-    })
-  }
-
+function NavBar(){
 
   return (
     <div>
-      <NavLink to="/"> Albums </NavLink>
+      <NavLink to="/"> Home </NavLink>
+      {/* <NavLink to="/albums"> My Albums </NavLink> */}
       <NavLink to="/reviews"> My Reviews </NavLink>
-      {user ? <button onClick={handleLogout}>Log Out</button> :
-      <NavLink to="/login"> Log In or Sign Up </NavLink>}
+      <NavLink to="/profile"> Profile </NavLink>
     </div>
   );
 }

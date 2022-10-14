@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
-function LogIn({onLogin}){
+function Profile({setUser, user}){
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -8,7 +8,7 @@ function LogIn({onLogin}){
   const [newUsername, setNewUsername] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newPasswordConfirm, setNewPasswordConfirm] = useState("");
-
+  const [userAlbums, setUserAlbums] = useState([])
 
 
   // Log In Submit
@@ -23,14 +23,27 @@ function LogIn({onLogin}){
     })
     .then(r => {
       if(r.ok){
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => setUser(user));
         setUsername("");
         setPassword("");
+        setErrors([]);
       } else {
         r.json().then((err) => setErrors(err.error));
       }
     });
   }
+
+  // Log Out
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    })
+  }
+
   // Show Signup Form Trigger
   function showSignupForm(){
     setShowSignup(true)
@@ -51,12 +64,27 @@ function LogIn({onLogin}){
       }),
     }).then((r)=> {
       if (r.ok) {
-        r.json().then((user) => onLogin(user));
+        r.json().then((user) => setUser(user));
+        setShowSignup(false);
+        setErrors([]);
       } else {
         r.json().then((err) => setErrors(err.errors))
       }
     });
   }
+
+  // Get user's albums
+  useEffect(() => {
+    if (user) {
+      fetch(`/users/${user.id}/albums`).then((r) => {
+        if(r.ok) {
+          r.json().then((albums) => setUserAlbums(albums))
+        }
+      })
+    }
+  }, [user])
+
+  const uniqueAlbums = [...new Set(userAlbums.map(album => album.title))];
 
 
   if(showSignup) return (
@@ -80,14 +108,25 @@ function LogIn({onLogin}){
 
   return(
     <div>
-      {/* Log In Form */}
-        <form onSubmit={handleLoginSubmit}>
+      {/* Log In Form/LogOut */}
+      {user ? <h3> Welcome, {user.username}! </h3> : ""}
+      {user ? <h4> You have reviewed these albums: </h4> : ""}
+      {user ? uniqueAlbums.map((album) => (
+          <li key={album}>{album}</li>
+      )) : ""
+      }
+      {!user ? (
+      <form onSubmit={handleLoginSubmit}>
           <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)}
           />
           <input type="text" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">Login</button>
         </form>
+        ) : (
+      <button onClick={() => handleLogout()}> Log Out </button>
+        )
+        }
         {/* Errors */}
         <div>
           {errors ? (
@@ -95,11 +134,15 @@ function LogIn({onLogin}){
           ) : ""
           }
         </div>
-      <label>Don't have an account?</label>
-      <button onClick={showSignupForm}>Create One</button>
+      {!user ? (
+        <div>
+          <label>Don't have an account?</label>
+          <button onClick={showSignupForm}>Create One</button>
+        </div>
+      ) : ""}
     </div>
 
   );
 }
 
-export default LogIn;
+export default Profile;
