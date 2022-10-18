@@ -13,7 +13,7 @@ function App() {
   const [albums, setAlbums] = useState([]);
 
 
-  // Stay Logged On MUST HANDLE ERRORS?
+  // Stay Logged On:
   useEffect(() => {
     fetch("/me").then((r) => {
       if (r.ok) {
@@ -21,9 +21,6 @@ function App() {
       }
     });
   }, []);
-
-
-
 
   return (
     <div className="App">

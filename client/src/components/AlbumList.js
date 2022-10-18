@@ -19,7 +19,7 @@ function AlbumList({user, setAlbums, albums}){
   album.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  // Add Album Form
+  // Show Add Album Form
   function showAddAlbumForm(){
     setShowAddAlbum(true)
   };
@@ -35,16 +35,18 @@ function AlbumList({user, setAlbums, albums}){
 
   return (
     <div>
-      <input
-        type="text"
-        name="search"
-        placeholder="search"
-        autoComplete="off"
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-      />
+      <div>
+        <input
+          type="text"
+          name="search"
+          placeholder="search"
+          autoComplete="off"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+      </div>
       <button onClick={showAddAlbumForm}>Add New Album</button>
-      <ul>
+      <div className="AlbumList">
         {displayedAlbums.map((album) => (
           <Album
             key={album.id}
@@ -52,7 +54,7 @@ function AlbumList({user, setAlbums, albums}){
             user={user}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

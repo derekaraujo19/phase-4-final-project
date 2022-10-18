@@ -1,8 +1,8 @@
 function Title(){
   return (
-    <div>
-      <h1>DiscSnob</h1>
-      <h4>hot takes of your favorite albums in 250 characters or less</h4>
+    <div className="Title">
+      <h5 id="subtitle">hot takes of your favorite albums</h5>
+      <h1 id="title">DiscSnob</h1>
     </div>
   );
 }

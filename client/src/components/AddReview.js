@@ -32,6 +32,11 @@ function AddReview({showAddReview, albums, addNewReview}) {
     });
   }
 
+  // Return to Review Listview
+  function returnToReviewList() {
+    showAddReview(false);
+  };
+
 
   return (
     <div>
@@ -46,8 +51,9 @@ function AddReview({showAddReview, albums, addNewReview}) {
         <textarea name="body" placeholder="" maxLength="250" value={body} onChange={(e) => setBody(e.target.value)}/>
         <button>Post</button>
       </form>
+      <button onClick={returnToReviewList}>Return to List</button>
       {/* ERRORS */}
-      <div>
+      <div className="Errors">
         {errors ? (errors.map((error) => (
           <ul key={error}>{error}</ul>
         ))) : ""

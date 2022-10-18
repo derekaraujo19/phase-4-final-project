@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   # Reviews:
-  get '/users/:user_id/reviews', to: 'reviews#index'
-  resources :reviews, only: [:create, :update]
+  resources :reviews, only: [:index, :create, :update, :destroy]
 
 
 

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import EditReview from "./EditReview";
 
-function Review({review}) {
+function Review({review, handleUpdateReview, handleDeleteReview}) {
   const [isEditing, setIsEditing] = useState(false);
+
+  // Delete Review Backend:
+  function handleDeleteSubmit() {
+    fetch(`/reviews/${review.id}`, {
+      method: "DELETE",
+    });
+    handleDeleteReview(review.id);
+  }
 
   return (
     <ul key={review.id}>
@@ -11,10 +19,13 @@ function Review({review}) {
       <li>{review.body}</li>
       <li>{review.created_at}</li>
       {isEditing ? (
-        <EditReview />
+        <EditReview review={review} setIsEditing={setIsEditing} handleUpdateReview={handleUpdateReview} />
       ) : (
         <button onClick={() => setIsEditing(true)}>Edit</button>
       )}
+      <button onClick={handleDeleteSubmit}>
+        <div role="img" aria-label="delete"> 🗑 </div>
+      </button>
     </ul>
   );
 }
