@@ -48,7 +48,7 @@ function AddReview({showAddReview, albums, addNewReview}) {
           ))}
         </select>
         <input type="text" name="title" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <textarea name="body" placeholder="" maxLength="250" value={body} onChange={(e) => setBody(e.target.value)}/>
+        <textarea name="body" placeholder="Max 250 Characters" maxLength="250" value={body} onChange={(e) => setBody(e.target.value)}/>
         <button>Post</button>
       </form>
       <button onClick={returnToReviewList}>Return to List</button>

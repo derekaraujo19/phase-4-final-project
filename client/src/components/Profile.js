@@ -112,7 +112,7 @@ function Profile({setUser, user}){
       {user ? <h3> Welcome, {user.username}! </h3> : ""}
       {user ? <h4> You have reviewed these albums: </h4> : ""}
       {user ? uniqueAlbums.map((album) => (
-          <li key={album}>{album}</li>
+          <li key={album} className="ProfileAlbums">{album}</li>
       )) : ""
       }
       {!user ? (
@@ -136,8 +136,8 @@ function Profile({setUser, user}){
         </div>
       {!user ? (
         <div>
-          <label>Don't have an account?</label>
-          <button onClick={showSignupForm}>Create One</button>
+          <label> Don't have an account? </label>
+          <button onClick={showSignupForm}> Create One </button>
         </div>
       ) : ""}
     </div>

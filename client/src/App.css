@@ -1,22 +1,30 @@
+
+/* Main font */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Review Body Font */
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
 
 .App {
   text-align: center;
   font-family: 'Bebas Neue', cursive;
   font-size: xx-large;
+  min-width: 550px;
+  margin: auto;
 }
 
 .Title {
   font-family: 'Bebas Neue', cursive;
   line-height:50%;
   position: fixed;
-  margin-left: 30px;
+  margin-left: 40px;
   margin-top: 2%;
+  display: block;
+
 }
 
 #title {
-
   font-size: 400%;
 
 }
@@ -26,10 +34,12 @@
 
 }
 
-/* .Nav {
-  margin-top: 5%;
-  margin-bottom: 2%;
-} */
+.Nav {
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+  gap: 5px;
+}
 
 .Errors {
   color: red;
@@ -37,9 +47,31 @@
 
 
 /* Lists */
-
 .AlbumList {
-
+  display: block;
   list-style-type: none;
   margin: 40px;
+}
+
+#album_reviews {
+  margin: auto;
+  inline-size: 600px;
+  list-style-type: none;
+  margin-top:1%;
+  margin-bottom:5%;
+  padding-left:0;
+  /* justify-content: center; */
+}
+
+.ProfileAlbums {
+  list-style-type: none;
+}
+
+/* Forms */
+
+#add_album_form {
+  align-items: center;
+  width: 30%;
+  margin: auto;
+
 }

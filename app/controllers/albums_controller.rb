@@ -3,7 +3,8 @@ class AlbumsController < ApplicationController
 
   def index
     albums = Album.all
-    render json: albums, include: ['reviews', 'reviews.user']
+    sorted = albums.order(id: :desc)
+    render json: sorted, include: ['reviews', 'reviews.user']
   end
 
   def user_albums

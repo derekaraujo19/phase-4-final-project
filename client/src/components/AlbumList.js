@@ -26,7 +26,7 @@ function AlbumList({user, setAlbums, albums}){
 
   // Add New Album to DOM
   function addNewAlbum(newAlbum) {
-    setAlbums([...albums, newAlbum]);
+    setAlbums([newAlbum, ...albums]);
   };
 
   // Add Album Form
@@ -39,7 +39,7 @@ function AlbumList({user, setAlbums, albums}){
         <input
           type="text"
           name="search"
-          placeholder="search"
+          placeholder="Search by Title"
           autoComplete="off"
           value={search}
           onChange={e => setSearch(e.target.value)}

@@ -1,12 +1,39 @@
 import {NavLink} from "react-router-dom";
 
+const linkStyles = {
+  color: "#000000",
+};
+
+const activeStyle = {
+  color: "#FFC0CB",
+};
+
+
+
 function NavBar(){
+
+
+
 
   return (
     <div className="Nav">
-      <NavLink to="/"> Home </NavLink>
-      <NavLink to="/reviews"> My Reviews </NavLink>
-      <NavLink to="/profile"> Profile </NavLink>
+      <NavLink
+        exact to="/home"
+        style={({ isActive }) => (isActive ? activeStyle : linkStyles)}
+        >
+        Home
+      </NavLink>
+      <NavLink
+        exact to="/reviews"
+        style={({ isActive }) => (isActive ? activeStyle : linkStyles)}
+        > My Reviews
+      </NavLink>
+      <NavLink
+        exact to="/profile"
+        style={({ isActive }) => (isActive ? activeStyle : linkStyles)}
+        >
+        Profile
+      </NavLink>
     </div>
   );
 }

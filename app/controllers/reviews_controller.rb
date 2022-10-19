@@ -4,7 +4,8 @@ class ReviewsController < ApplicationController
   def index
     user = User.find_by(id: session[:user_id])
     reviews = user.reviews
-    render json: reviews
+    sorted = reviews.order(id: :desc)
+    render json: sorted
   end
 
   def create

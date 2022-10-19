@@ -22,7 +22,7 @@ function MyReviews({user, albums}) {
 
   // Add New Review to DOM
   function addNewReview(newReview) {
-    setReviews([...reviews, newReview])
+    setReviews([newReview, ...reviews])
   };
 
   // Update review
@@ -49,7 +49,7 @@ function MyReviews({user, albums}) {
   // Add Review Form
   if(showAddReview) return <AddReview showAddReview={setShowAddReview} albums={albums} addNewReview={addNewReview}/>
 
-  console.log(reviews)
+  // console.log(reviews)
 
   return (
     <ul>
