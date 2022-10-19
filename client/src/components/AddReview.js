@@ -40,7 +40,7 @@ function AddReview({showAddReview, albums, addNewReview}) {
 
   return (
     <div>
-      <form onSubmit={handleReviewSubmit}>
+      <form id="add_review_form" onSubmit={handleReviewSubmit}>
         <select className="album-select" placeholder="Choose Album" value={albumId} onChange={(e) => setAlbumId(e.target.value)}>
           <option disabled={true} value="">-Choose an Album-</option>
           {albums.map((album) => (
