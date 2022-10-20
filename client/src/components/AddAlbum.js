@@ -42,7 +42,7 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
 
 
   return (
-    <div id="add_album_form">
+    <div className="forms">
       <form onSubmit={handleAddAlbumSubmit}>
         <input  type="text" name="title" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}  />
         <input  type="text" name="release_date" placeholder="Release Date (opt.)" value={release_date} onChange={(e) => setRelease_date(e.target.value)}  />

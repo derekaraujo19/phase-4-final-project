@@ -36,9 +36,9 @@ function EditReview({review, setIsEditing, handleUpdateReview}) {
 
   return (
     <div>
-      <form onSubmit={handleUpdateSubmit}>
+      <form onSubmit={handleUpdateSubmit} id="edit_review">
         <input type="text" name="title" value={reviewTitle} onChange={(e) => setReviewTitle(e.target.value)}  />
-        <textarea name="body"  maxLength="250" value={reviewBody} onChange={(e) => setReviewBody(e.target.value)} />
+        <textarea name="body"  maxLength="250" style={{width:"350px", height:"120px", resize: "none"}} value={reviewBody} onChange={(e) => setReviewBody(e.target.value)} />
         <button> Save </button>
       </form>
       <button onClick={returnToReviewList}>Return to List</button>

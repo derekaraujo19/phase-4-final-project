@@ -40,7 +40,7 @@ function AddReview({showAddReview, albums, addNewReview}) {
 
   return (
     <div>
-      <form id="add_review_form" onSubmit={handleReviewSubmit}>
+      <form className="forms" onSubmit={handleReviewSubmit}>
         <select className="album-select" placeholder="Choose Album" value={albumId} onChange={(e) => setAlbumId(e.target.value)}>
           <option disabled={true} value="">-Choose an Album-</option>
           {albums.map((album) => (
@@ -48,7 +48,7 @@ function AddReview({showAddReview, albums, addNewReview}) {
           ))}
         </select>
         <input type="text" name="title" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <textarea name="body" placeholder="Max 250 Characters" maxLength="250" value={body} onChange={(e) => setBody(e.target.value)}/>
+        <textarea name="body" placeholder="Max 250 Characters" maxLength="250" style={{width:"350px", height:"120px", resize: "none"}}value={body} onChange={(e) => setBody(e.target.value)}/>
         <button>Post</button>
       </form>
       <button onClick={returnToReviewList}>Return to List</button>

@@ -13,11 +13,15 @@ function Review({review, handleUpdateReview, handleDeleteReview}) {
   }
 
   return (
-    <ul key={review.id}>
-      <li> <img src={review.album.artwork_url} alt="Album Artwork" width="100" height="100"/> {review.album.title} by {review.album.artist} </li>
-      <li>{review.title}</li>
-      <li>{review.body}</li>
-      <li>{review.created_at}</li>
+    <ul id="user_reviews" key={review.id}>
+      <div id="user_review_album_data">
+        <img src={review.album.artwork_url} alt="Album Artwork" width="100" height="100"/>
+        <li> <b>{review.album.title}</b> </li>
+        <li style={ {fontSize: 25} }>by {review.album.artist} </li>
+      </div>
+      <li style={{color:"#6F7378"}}><b>{review.title}</b></li>
+      <li style={ {fontSize: 25, padding:5} }>{review.body}</li>
+      <li style={{padding:8, fontSize:24,color:"#6F7378"}}> on {review.created_at.slice(5,10)}-{review.created_at.slice(0,4)}</li>
       {isEditing ? (
         <EditReview review={review} setIsEditing={setIsEditing} handleUpdateReview={handleUpdateReview} />
       ) : (

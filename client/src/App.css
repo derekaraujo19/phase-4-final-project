@@ -65,14 +65,39 @@
   border-radius: 15px;
 }
 
+#user_reviews {
+  margin: auto;
+  list-style-type: none;
+  inline-size: 600px;
+  margin-top:1%;
+  margin-bottom:5%;
+  padding-left:0;
+  text-align: left;
+  background-color: #F2F2F2;
+  border-radius: 15px;
+}
+
+#user_review_album_data {
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 1%;
+}
+
 .ProfileAlbums {
   list-style-type: none;
 }
 
 /* Forms */
-
-#add_album_form {
+.forms {
   align-items: center;
   width: 30%;
   margin: auto;
 }
+
+#edit_review {
+  display: inline-block;
+  justify-content: center;
+}
+
