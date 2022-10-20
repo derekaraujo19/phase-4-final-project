@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  # skip_before_action :authorize, only: [:destroy]
 
   def index
     user = User.find_by(id: session[:user_id])
