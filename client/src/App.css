@@ -87,6 +87,8 @@
 
 .ProfileAlbums {
   list-style-type: none;
+  background-color: black;
+  color: white;
 }
 
 /* Forms */

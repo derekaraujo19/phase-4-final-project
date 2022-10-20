@@ -109,8 +109,8 @@ function Profile({setUser, user}){
   return(
     <div>
       {/* Log In Form/LogOut */}
-      {user ? <h3> Welcome, {user.username}! </h3> : ""}
-      {user ? <h4> You have reviewed these albums: </h4> : ""}
+      {user ? <h3 style={{fontSize:50}}> Welcome, {user.username}! </h3> : ""}
+      {user ? <h4 className="ProfileAlbums"> You have reviewed these albums: </h4> : ""}
       {user ? uniqueAlbums.map((album) => (
           <li key={album} className="ProfileAlbums">{album}</li>
       )) : ""
