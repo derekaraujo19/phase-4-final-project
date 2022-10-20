@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
-function AddReview({showAddReview, albums, addNewReview}) {
+function AddReview({showAddReview, addNewReview}) {
+  const [albums, setAlbums] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [albumId, setAlbumId] = useState("");
   const [errors, setErrors] = useState([]);
 
+  // Get albums for Select Options:
+    useEffect(() => {
+      fetch('/albums')
+        .then((r) => r.json())
+        .then((albums) => setAlbums(albums));
+    }, []);
 
   // Submit new review:
   function handleReviewSubmit(e) {
