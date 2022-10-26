@@ -44,10 +44,10 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
   return (
     <div className="forms">
       <form onSubmit={handleAddAlbumSubmit}>
-        <input  type="text" name="title" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}  />
-        <input  type="text" name="release_date" placeholder="Release Date (opt.)" value={release_date} onChange={(e) => setRelease_date(e.target.value)}  />
-        <input  type="text" name="artist" placeholder="Artist" value={artist} onChange={(e) => setArtist(e.target.value)}  />
-        <input  type="text" name="artwork" placeholder="Artwork URL" value={artwork} onChange={(e) => setArtwork(e.target.value)}  />
+        <input  type="text" name="title" placeholder="Title" autoComplete="off" value={title} onChange={(e) => setTitle(e.target.value)}  />
+        <input  type="text" name="release_date" placeholder="Release Date (opt.)" autoComplete="off" value={release_date} onChange={(e) => setRelease_date(e.target.value)}  />
+        <input  type="text" name="artist" placeholder="Artist" autoComplete="off" value={artist} onChange={(e) => setArtist(e.target.value)}  />
+        <input  type="text" name="artwork" placeholder="Artwork URL" autoComplete="off" value={artwork} onChange={(e) => setArtwork(e.target.value)}  />
         <button>Add Album</button>
       </form>
       <button onClick={returnToAlbumList}>Return to List</button>
