@@ -35,6 +35,7 @@ album11 = Album.create(title: "Let It Be", release_date: "1970", artist: "The Be
 album12 = Album.create(title: "War", release_date: "1983", artist: "U2", artwork_url: "https://upload.wikimedia.org/wikipedia/en/2/2e/U2_War_album_cover.jpg")
 album13 = Album.create(title: "BUBBA", release_date: "2019", artist: "Kaytranada", artwork_url: "https://media.pitchfork.com/photos/5df3c008b91d230008bf3846/1:1/w_600/bubba.jpeg")
 album14 = Album.create(title: "Renaissance", release_date: "2022", artist: "Beyoncé", artwork_url: "https://media.pitchfork.com/photos/62bdd2cb9e0c39ec09d73fd7/1:1/w_600/Beyonce-Renaissance.jpg")
+album15 = Album.create(title: "Fetch the Bolt Cutters", release_date: "2020", artist: "Fiona Apple", artwork_url: "https://media.pitchfork.com/photos/5e98fdb0e30e2f000804d7d6/1:1/w_320,c_limit/FIONAAPPLECOVER.jpg")
 
 
 # Reviews
@@ -57,6 +58,10 @@ Review.create(user_id: user8.id, album_id: album6.id, title: "It's grown up with
 Review.create(user_id: user8.id, album_id: album2.id, title: "my musical awakening", body: "This is the album that turned me on to music. I remember first hearing the opening organ sound to Where The Streets Have No Name, and I just couldn't move. The build-up, climax, and release of the song transporting little me to a different plane.")
 Review.create(user_id: user8.id, album_id: album9.id, title: "The Father of Ambient", body: "This album is the Holy Grail of ambient albums. Put it on when you're happy, put it on when you're sad.. it doesn't matter, just put it on.")
 Review.create(user_id: user8.id, album_id: album3.id, title: "best of the 90s", body: "this is one of the best albums from a phenomenal band at the peak of their creativity. i stole this cd from my sister's collection and would play it on loop on the bus to school. it's a classic record ")
+Review.create(user_id: user3.id, album_id: album3.id, title: "I get it's a classic, but..", body: "It's no Kid A or Amnesiac! Kinda sounds like rehashed Beatles music to me")
+Review.create(user_id: user4.id, album_id: album15.id, title: "10/10", body: "A perfect album!")
+Review.create(user_id: user1.id, album_id: album15.id, title: "Wow..", body: "No music has ever sounded quite like this")
+Review.create(user_id: user2.id, album_id: album15.id, title: "Overrated", body: "She's so annoying. Just repeating 'ladies' over and over again does not make a good chorus")
 
 
 
