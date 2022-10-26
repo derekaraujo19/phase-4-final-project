@@ -91,9 +91,9 @@ function Profile({setUser, user}){
       <div>
         {/* Sign Up Form */}
         <form onSubmit={handleSignupSubmit}>
-          <input type="text" name="username" placeholder="Username" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} />
-          <input type="text" name="password" placeholder="Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
-          <input type="text" name="password_confirmation" placeholder="Confirm Password" value={newPasswordConfirm} onChange={(e) => setNewPasswordConfirm(e.target.value)} />
+          <input type="text" name="username" placeholder="Username" autoComplete="off" value={newUsername} onChange={(e) => setNewUsername(e.target.value)} />
+          <input type="text" name="password" placeholder="Password" autoComplete="off" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
+          <input type="text" name="password_confirmation" placeholder="Confirm Password" autoComplete="off" value={newPasswordConfirm} onChange={(e) => setNewPasswordConfirm(e.target.value)} />
           <button type="submit">Create Account</button>
         </form>
         {/* Errors */}
@@ -117,9 +117,9 @@ function Profile({setUser, user}){
       }
       {!user ? (
       <form onSubmit={handleLoginSubmit}>
-          <input type="text" name="username" placeholder="username" value={username} onChange={(e) => setUsername(e.target.value)}
+          <input type="text" name="username" placeholder="username" autoComplete="off" value={username} onChange={(e) => setUsername(e.target.value)}
           />
-          <input type="text" name="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}
+          <input type="text" name="password" placeholder="password" autoComplete="off" value={password} onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit">Login</button>
         </form>
