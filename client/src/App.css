@@ -38,8 +38,15 @@
   display: flex;
   justify-content: center;
   margin: 2%;
-  gap: 5px;
+  gap: 8px;
 }
+
+.Nav:hover {
+  background-color: black;
+}
+.nav_link:hover {
+  font-size: 125%;
+  }
 
 .Errors {
   color: red;
@@ -75,6 +82,10 @@
   text-align: left;
   background-color: #F2F2F2;
   border-radius: 15px;
+}
+
+.reviews_list {
+  padding-left: 0;
 }
 
 #user_review_album_data {

@@ -1,12 +1,9 @@
 import {NavLink} from "react-router-dom";
 
 const linkStyles = {
-  color: "#000000",
+  color: "#FFC0CB"
 };
 
-const activeStyle = {
-  color: "#FFC0CB",
-};
 
 
 
@@ -18,19 +15,22 @@ function NavBar(){
   return (
     <div className="Nav">
       <NavLink
-        exact to="/home"
-        style={({ isActive }) => (isActive ? activeStyle : linkStyles)}
+        exact to="/"
+        style={linkStyles}
+        className="nav_link"
         >
         Home
       </NavLink>
       <NavLink
         exact to="/reviews"
-        style={({ isActive }) => (isActive ? activeStyle : linkStyles)}
+        style={linkStyles}
+        className="nav_link"
         > My Reviews
       </NavLink>
       <NavLink
         exact to="/profile"
-        style={({ isActive }) => (isActive ? activeStyle : linkStyles)}
+        style={linkStyles}
+        className="nav_link"
         >
         Profile
       </NavLink>

@@ -62,6 +62,7 @@ Review.create(user_id: user3.id, album_id: album3.id, title: "I get it's a class
 Review.create(user_id: user4.id, album_id: album15.id, title: "10/10", body: "A perfect album!")
 Review.create(user_id: user1.id, album_id: album15.id, title: "Wow..", body: "No music has ever sounded quite like this")
 Review.create(user_id: user2.id, album_id: album15.id, title: "Overrated", body: "She's so annoying. Just repeating 'ladies' over and over again does not make a good chorus")
+Review.create(user_id: user8.id, album_id: album13.id, title: "I like that one song", body: "I haven't listened to the whole album yet, but that one song featuring Pharrell is my jam")
 
 
 

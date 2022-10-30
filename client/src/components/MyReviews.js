@@ -52,17 +52,21 @@ function MyReviews({user, albums}) {
   // console.log(reviews)
 
   return (
-    <ul>
-      <button onClick={showAddReviewForm}>Add New Review</button>
-      {reviews.map((review) => (
-        <Review
-          review={review}
-          key={review.id}
-          handleUpdateReview={handleUpdateReview}
-          handleDeleteReview={handleDeleteReview}
-        />
-      ))}
-    </ul>
+    <div>
+      <ul className="reviews_list">
+        <h3 style={{fontSize:50}}> MY REVIEWS </h3>
+        <button onClick={showAddReviewForm}>Add New Review</button>
+        {reviews.map((review) => (
+          <Review
+            review={review}
+            key={review.id}
+            handleUpdateReview={handleUpdateReview}
+            handleDeleteReview={handleDeleteReview}
+          />
+        ))}
+      </ul>
+    </div>
+
   );
 }
 
