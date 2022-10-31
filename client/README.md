@@ -1,8 +1,8 @@
 # DiscSnob
 
-DISCSNOB is a social hub where users can leave short "hot takes" on their favorite albums.
+DiscSnob is a social hub where users can leave short "hot takes" on their favorite albums.
 
-The Home page is a list of all the albums in the DiscSnob database. Here you can search by title, add a new album, and read the reviews for each entry. After logging in or creating an account in the Profile tab, you'll be greated with a list of albums that you have already reviewed. The My Reviews tab is where you can post a review on one of the albums. You'll also have the ability to edit or delete anything you've previously posted.
+The Home page is a list of all the albums in the DiscSnob database. Here you can search by title, add a new album, and read the reviews for each entry. After logging in or creating an account in the Profile tab, you'll be greated with a list of albums that you have already reviewed. The My Reviews tab is where you can post a review on one of the albums. You'll also have the ability to edit or delete any review you've previously posted.
 
 A video walkthrough of the application running can be found [here](https://youtu.be/FaSTDTUC6n8).
 

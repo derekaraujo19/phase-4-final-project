@@ -49,7 +49,6 @@ function MyReviews({user, albums}) {
   // Add Review Form
   if(showAddReview) return <AddReview showAddReview={setShowAddReview} albums={albums} addNewReview={addNewReview}/>
 
-  // console.log(reviews)
 
   return (
     <div>

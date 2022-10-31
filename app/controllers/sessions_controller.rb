@@ -3,10 +3,8 @@ class SessionsController < ApplicationController
 
   #Log In
   def create
-
-    # finde user by username
+    # find user by username
     user = User.find_by(username: params[:username])
-    # byebug
     # if user and authenticated password exists
     if user&.authenticate(params[:password])
       # set id on session hash
@@ -14,7 +12,7 @@ class SessionsController < ApplicationController
       # return json response
       render json: user
     else
-      # if user doesn't exist and password isn't authenticated
+      # if user doesn't exist or password isn't authenticated
       render json: {error: "Invalid username or password"}, status: :unauthorized
     end
   end

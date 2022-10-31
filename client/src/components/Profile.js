@@ -97,9 +97,9 @@ function Profile({setUser, user}){
           <button type="submit">Create Account</button>
         </form>
         {/* Errors */}
-          <div className="Errors">
+          <div>
             {errors ? (errors.map((error) => (
-              <ul key={error}>{error}</ul>
+              <ul key={error} className="Errors">{error}</ul>
             ))) : ""
             }
           </div>
@@ -128,9 +128,9 @@ function Profile({setUser, user}){
         )
         }
         {/* Errors */}
-        <div className="Errors">
+        <div >
           {errors ? (
-            <ul>{errors}</ul>
+            <ul className="Errors">{errors}</ul>
           ) : ""
           }
         </div>

@@ -2,8 +2,6 @@
 /* Main font */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* Review Body Font */
-@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
 
 .App {
@@ -50,6 +48,8 @@
 
 .Errors {
   color: red;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 
@@ -112,6 +112,5 @@
 #edit_review {
   width: 50%;
   margin: auto;
-
 }
 

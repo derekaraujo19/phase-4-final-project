@@ -52,9 +52,9 @@ function AddAlbum({showAddAlbum, addNewAlbum}){
       </form>
       <button onClick={returnToAlbumList}>Return to List</button>
       {/* ERRORS */}
-      <div className="Errors">
+      <div >
         {errors ? (errors.map((error) => (
-          <ul key={error}>{error}</ul>
+          <ul key={error} className="Errors">{error} </ul>
         ))) : ""
         }
       </div>

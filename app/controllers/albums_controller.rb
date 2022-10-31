@@ -19,7 +19,6 @@ class AlbumsController < ApplicationController
   end
 
 
-
   private
 
   def album_params

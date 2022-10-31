@@ -60,9 +60,9 @@ function AddReview({showAddReview, addNewReview}) {
       </form>
       <button onClick={returnToReviewList}>Return to List</button>
       {/* ERRORS */}
-      <div className="Errors">
+      <div>
         {errors ? (errors.map((error) => (
-          <ul key={error}>{error}</ul>
+          <ul key={error} className="Errors">{error}</ul>
         ))) : ""
         }
       </div>
